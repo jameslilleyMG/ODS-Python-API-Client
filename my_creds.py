@@ -1,6 +1,6 @@
-email = 'my_email'
-password = 'my_password'
-domain = 'my_oxdomain.com'
-realm = 'my_realm'
-consumer_key ='my_consumer_key'
-consumer_secret = 'my_consumer_secret'
+consumer_key = "eca27428d2f44754590e316e0fb4a37d9ce962ad"
+consumer_secret = "a03bb8cf6fc62e790cae80689ee739f3b048a2f5"
+realm = "eighties_kids"
+domain = "eighties-kids-ui3.openxenterprise.com"
+email = "sam.hudson@auctusdigital.co.uk"
+password = "KSB~+4!EYm"

@@ -1,0 +1,78 @@
+Metadata-Version: 2.1
+Name: ox3apiclient
+Version: 0.6.0
+Summary: Client to connect to the OpenX Enterprise API.
+Home-page: https://github.com/openx/OX3-Python-API-Client
+Author: OpenX API Team
+Author-email: api@openx.com
+License: BSD
+Platform: POSIX
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+License-File: LICENSE.txt
+
+For OpenX Reporting access using the Python API Client you will need:
+(examples come from an Ubuntu machine)
+
+### 1. Your credentials:
+- consumer_key,
+- consumer_secret,
+- email address and password for your user of your OpenX instance.
+
+### 2. install Python
+
+Update the package list
+<code>$ sudo apt update</code>
+
+Install python3 and pip
+<code>$ sudo apt install python3 python3-pip python3-dev </code> 
+
+### 3. Clone the library into your working directory:
+
+<code>$ git clone https://github.com/openx/ODS-Python-API-Client</code>
+
+### 4. Go to the downloaded repository and install the library:
+
+<code>$ python3 setup.py install</code>
+
+Now, set up your Python API Client.
+
+### 5. Edit 'my_creds.py' file - add your credentials.
+
+### 6. Edit 'report_config.py' file - place your request body into the 'settings' variable.
+
+The "settings" variable is responsible for the request body; in there you can place any specific dates / hours / attributes and metrics that will define your report. That particular example uses "Inv_perf_pub" report template for the 15th of June 2019. For more information visit http://openxcorporate-ui3.openxenterprise.com/data/1.0/ods.html .
+
+If you want to find out what is the date range available for the selected report - please make sure you have the same metrics and attributes in the "data_range" variable as you have in the "settings" variable.
+
+### 6a. Edit 'post_config.py' file - place your request body into the 'settings' variable.
+
+The "settings" variable is responsible for the request body; in there you can place specific attributes to create any UI item, e.g. an ad unit. For more information visit  https://docs.openx.com/Content/developers/platform_api/api_ref.html
+
+### 7. Run the python script
+- 'pull_fields.py' to see all the available fields
+
+<code>$ python3 pull_fields.py</code>
+
+- 'date_range.py' to check what is the available date range for selected report (earliest possible StartData, closest possible EndDate)
+
+<code>$ python3 pull_report.py</code>
+
+- 'pull_reports.py' to pull your report
+
+<code>$ python3 pull_report.py</code>
+
+- 'ox_post.py' to send a request to our legacy endpoint, can be used to create UI items, e.g. an ad unit.
+
+<code>$ python3 ox_post.py</code>

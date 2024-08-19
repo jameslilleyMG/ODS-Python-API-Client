@@ -28,4 +28,8 @@ ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)
 ox.logger.addHandler(ch)
 
-report = ox.get('/report/fields');
+report = ox.get('/report/fields')
+
+#save to file
+with open('openx_report_fields.json', 'w') as f:
+    json.dump(report, f)
